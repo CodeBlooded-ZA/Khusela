@@ -1,0 +1,207 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-condensed: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Theme tokens */
+    --bg-desktop: #08080A;
+    --bg-frame: #000000;
+    --bg-island: #000000;
+    --chassis-rim: #1C1C22;
+    --chassis-outer: #2E2E36;
+    --chassis-shadow: rgba(0, 0, 0, 0.8);
+    --home-bar: rgba(255, 255, 255, 0.4);
+    --top-bar-text: #FFFFFF;
+  }
+
+  html.theme-light,
+  .theme-light {
+    --bg-desktop: #E5EBF2;
+    --bg-frame: #F8FAFC;
+    --bg-island: #000000;
+    --chassis-rim: #CBD5E1;
+    --chassis-outer: #94A3B8;
+    --chassis-shadow: rgba(15, 23, 42, 0.15);
+    --home-bar: rgba(15, 23, 42, 0.35);
+    --top-bar-text: #0F172A;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100dvh;
+    max-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: var(--font-inter);
+    background-color: var(--bg-desktop);
+    transition: background-color 0.25s ease;
+  }
+}
+
+.font-condensed {
+  font-family: var(--font-condensed);
+  letter-spacing: 0.02em;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #2E2E36;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5C5C66;
+}
+
+.theme-light ::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+.theme-light ::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+}
+.theme-light ::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Light Mode Overrides */
+.theme-light .bg-black {
+  background-color: #F8FAFC !important;
+}
+.theme-light .bg-black\/90,
+.theme-light .bg-black\/95,
+.theme-light .bg-black\/80 {
+  background-color: rgba(248, 250, 252, 0.96) !important;
+}
+
+.theme-light .bg-\[\#08080A\] {
+  background-color: #E5EBF2 !important;
+}
+.theme-light .bg-\[\#0D0D11\] {
+  background-color: #F1F5F9 !important;
+}
+.theme-light .bg-\[\#0a0a0c\] {
+  background-color: #F1F5F9 !important;
+}
+.theme-light .bg-\[\#16161A\] {
+  background-color: #FFFFFF !important;
+}
+.theme-light .bg-\[\#24242B\] {
+  background-color: #F1F5F9 !important;
+}
+.theme-light .bg-\[\#1C1C22\] {
+  background-color: #E2E8F0 !important;
+}
+
+/* Borders in light mode */
+.theme-light .border-\[\#2E2E36\] {
+  border-color: #E2E8F0 !important;
+}
+.theme-light .border-\[\#1C1C22\] {
+  border-color: #CBD5E1 !important;
+}
+.theme-light .border-white\/10,
+.theme-light .border-white\/20 {
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+/* Texts in light mode */
+.theme-light .text-white {
+  color: #0F172A !important;
+}
+.theme-light .text-white\/90 {
+  color: #1E293B !important;
+}
+.theme-light .text-white\/80 {
+  color: #334155 !important;
+}
+.theme-light .text-white\/60 {
+  color: #64748B !important;
+}
+.theme-light .text-white\/40 {
+  color: #94A3B8 !important;
+}
+.theme-light .text-\[\#8E8E99\] {
+  color: #64748B !important;
+}
+.theme-light .text-\[\#5C5C66\] {
+  color: #94A3B8 !important;
+}
+
+/* Card shadows in light mode for tactile depth */
+.theme-light .bg-\[\#16161A\] {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Preserve bright colored text on badges, buttons, alert banners */
+.theme-light .preserve-white,
+.theme-light [class*="bg-\[\#FF3B30\]"],
+.theme-light [class*="bg-\[\#FF3B30\]"] *,
+.theme-light [class*="bg-red-"],
+.theme-light [class*="bg-red-"] *,
+.theme-light [class*="bg-\[\#3D8BFF\]"],
+.theme-light [class*="bg-\[\#3D8BFF\]"] *,
+.theme-light [class*="bg-blue-600"],
+.theme-light [class*="bg-blue-600"] * {
+  color: #FFFFFF !important;
+}
+
+.theme-light [class*="bg-\[\#34C759\]"],
+.theme-light [class*="bg-\[\#34C759\]"] * {
+  color: #052E16 !important;
+}
+
+.theme-light [class*="bg-\[\#FFC400\]"],
+.theme-light [class*="bg-\[\#FFC400\]"] * {
+  color: #451A03 !important;
+}
+
+/* Dynamic island always remains sleek dark capsule */
+.dynamic-island-capsule {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+.dynamic-island-capsule * {
+  color: #FFFFFF !important;
+}
+
+/* Form input elements in light mode */
+.theme-light input,
+.theme-light textarea,
+.theme-light select {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: #CBD5E1 !important;
+}
+.theme-light input::placeholder,
+.theme-light textarea::placeholder {
+  color: #94A3B8 !important;
+}
+
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.animate-radar {
+  animation: radar-pulse 2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}

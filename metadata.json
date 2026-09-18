@@ -1,0 +1,6 @@
+{
+  "name": "Khusela Safety",
+  "description": "High-fidelity community safety app prototype for women in South Africa with instant 5-friend alerts, emergency dispatch, live responder tracking, danger zones, and POPIA compliance.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
